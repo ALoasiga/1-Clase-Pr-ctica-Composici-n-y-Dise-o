@@ -1,0 +1,199 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  font-size: 20px;
+}
+
+:root a {
+  font-family: "Cabin", sans-serif, bold;
+}
+
+.encabezado {
+  background-color: lightblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.encabezado h1 {
+  font-family: "Dancing Script", cursive, bold;
+  color: red;
+  font-size: 40px;
+  padding: 10px;
+}
+
+.mainMenu {
+  background-color: #afc466;
+}
+
+.mainMenu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px;
+}
+
+.mainMenu ul a {
+  padding: 1rem;
+  color: white;
+}
+
+.mainMenu ul a:hover {
+  color: blue;
+  font-size: 1.5rem;
+}
+
+.sectionMain {
+  display: -ms-grid;
+  display: grid;
+  background-color: lightblue;
+  margin: 2rem 5rem 2rem 5rem;
+  padding: 25px;
+  border-radius: 1.5%;
+  -webkit-box-shadow: 9px 7px 7px 0px #23252b;
+          box-shadow: 9px 7px 7px 0px #23252b;
+      grid-template-areas: "titulo        menuSeccion" "descripcion  imagenDetalle" "menuDetalle  menuDetalle";
+}
+
+.sectionMain .titDet {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: titulo;
+  color: red;
+  font-family: "Dancing Script", cursive, bold;
+}
+
+.sectionMain .subMenu {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: menuSeccion;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sectionMain .subMenu li a {
+  color: red;
+  padding: 1rem;
+}
+
+.sectionMain .subMenu li a:hover {
+  color: blue;
+}
+
+.sectionMain .dsp {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: descripcion;
+  margin: 10px;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.sectionMain .dsp p {
+  padding: 15px;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.sectionMain .imagenDsp {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: imagenDetalle;
+  margin: 40px;
+}
+
+.sectionMain .imagenDsp img {
+  width: 400px;
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
+  border-top-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  -webkit-box-shadow: 9px 7px 7px 0px #203f81;
+          box-shadow: 9px 7px 7px 0px #203f81;
+}
+
+.sectionMain .imagenDsp img:hover {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.sectionMain .menuDet {
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: menuDetalle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sectionMain .menuDet a {
+  padding: 1rem;
+  color: red;
+}
+
+.sectionMain .menuDet a:hover {
+  color: blue;
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=main.css.map */

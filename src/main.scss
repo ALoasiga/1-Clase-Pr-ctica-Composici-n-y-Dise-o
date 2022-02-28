@@ -1,0 +1,159 @@
+$colorFondo: white;
+$colorFondoSec: rgb(175, 196, 102);
+$colorFondoTer: lightblue;
+$colorTexto: red;
+$colorTextSec: blue;
+$colorTextTer: white;
+$fontSizeBase: 20px;
+$box-shadow: 9px 7px 7px 0px rgb(35, 37, 43);
+$box-shadowSec: 9px 7px 7px 0px rgb(32, 63, 129);
+$font-family: 'Cabin', sans-serif, bold;
+$font-familySec: 'Dancing Script', cursive, bold;
+
+//Declaracion de mixin
+@mixin setFlex ($flexDir, $alig){
+    display: flex;
+    flex-direction: $flexDir; //row;
+    flex-wrap: wrap;
+    justify-content: $alig; //space-around;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+    font-size: $fontSizeBase;
+
+    a{
+       font-family: $font-family; 
+    }
+
+}
+
+.encabezado{
+    background-color: $colorFondoTer;
+    @include setFlex(row, space-around);
+
+
+    h1{
+        font-family: $font-familySec ;
+        color: $colorTexto;
+        font-size: $fontSizeBase * 2;
+        padding: 10px;
+    }
+}
+
+.mainMenu{
+    background-color: $colorFondoSec;
+
+    ul{
+        //Incluyendo el mixin setFlex
+        @include setFlex(row, center);
+        padding: 5px;
+
+        a{
+            padding: 1rem;
+            color: $colorTextTer;
+            &:hover{
+                color: $colorTextSec;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+.sectionMain{
+    display: grid;
+    background-color: $colorFondoTer;
+    margin: 2rem 5rem 2rem 5rem;
+    padding: 25px;
+    border-radius: 1.5%;
+    box-shadow: $box-shadow;
+
+    grid-template-areas: "titulo        menuSeccion"
+                          "descripcion  imagenDetalle"
+                          "menuDetalle  menuDetalle";
+
+    .titDet{
+        grid-row: 1;
+        grid-column: 1;
+        grid-area: titulo;
+        color: $colorTexto;
+        font-family: $font-familySec;
+    }
+
+    .subMenu{
+        grid-row: 1;
+        grid-column: 2;
+        grid-area: menuSeccion;
+        @include setFlex(row, center);
+
+        li{
+
+            a{
+                color: $colorTexto;
+                padding: 1rem;
+                //Definiendo estilos con pseudo clases usando la identacion.
+                &:hover{
+                    color: $colorTextSec;
+                }
+            }
+            
+        }
+    }
+
+    .dsp{
+        grid-area: descripcion;
+        margin: 10px;
+        grid-column: 1;
+        grid-row: 2;
+
+        p{
+            padding: 15px;
+            font-family:'Fredoka', sans-serif;
+        }
+    }
+
+    .imagenDsp{
+        grid-row: 2;
+        grid-column: 2;
+        grid-area: imagenDetalle;
+        margin: 40px;
+
+        img{
+            width: 400px;
+            filter: grayscale(50%);
+            border-top-left-radius: 10%;
+            border-bottom-right-radius: 10%;
+            box-shadow: $box-shadowSec;
+
+            &:hover{
+                filter: none;
+            }
+        }
+    }
+
+    .menuDet{
+        grid-row: 3;
+        grid-column: 1;
+
+        a{
+            padding: 1rem;
+            color: $colorTexto;
+            &:hover{
+                color: $colorTextSec;
+                font-size: 1.5rem;
+            }
+        }
+
+        grid-area: menuDetalle;
+        @include setFlex(row , center)
+    }
+}
+
+
